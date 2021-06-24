@@ -1,10 +1,10 @@
 import Head from "next/head";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { format } from "date-fns";
 
 import Rocket from "../components/Rocket";
+import RocketImage from "../components/RocketImage";
 import Launchpad from "../components/Launchpad";
 
 export default function Home() {
@@ -26,7 +26,7 @@ export default function Home() {
             <link rel="icon" href="/favicon.ico" />
           </Head>
 
-          <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center py-10">
+          <main className="flex flex-col items-center justify-center w-full flex-1 sm:px-10 md:px-20 text-center py-10">
             <h1 className="text-6xl font-bold">Launch List</h1>
 
             <h2 className="text-4xl font-bold mt-4">
@@ -36,10 +36,11 @@ export default function Home() {
               {launches.map((launch) => {
                 return (
                   <div
-                    className="w-96 text-left py-4 px-8 bg-gray-100 shadow-lg rounded-lg m-5"
+                    className="sm:w-full md:w-1/2 lg:w-1/3 flex-grow text-left bg-gray-100 shadow-lg rounded-lg m-5"
                     key={launch.name}
                   >
-                    <div>
+                    <RocketImage id={launch.rocket} />
+                    <div className="p-8">
                       <h2 className="text-gray-800 text-3xl font-semibold">
                         {launch.name}
                       </h2>

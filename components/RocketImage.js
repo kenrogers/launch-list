@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export default function Rocket({ id }) {
+export default function RocketImage({ id }) {
   const [rocket, setRocket] = useState({});
 
   useEffect(async () => {
@@ -9,15 +9,12 @@ export default function Rocket({ id }) {
       `https://api.spacexdata.com/v4/rockets/${id}`
     );
     setRocket(rocketData.data);
+    console.log(rocketData.data.flickr_images[0]);
   }, []);
 
-  return (
-    <a
-      target="_blank"
-      href={rocket.wikipedia}
-      className="text-blue-700 hover:text-blue-500"
-    >
-      <span>{rocket.name}</span>
-    </a>
+  return rocket.flickr_images ? (
+    <img src={rocket.flickr_images[0]} className="w-full rounded-t-lg" />
+  ) : (
+    ""
   );
 }
