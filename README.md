@@ -21,7 +21,7 @@ Since there is no timezone field on the launch item itself, I'll have to pull it
 
 So first I'll pull all the relevant launchpads associated with each upcoming launch, then create an array of timezones with their associated launch IDs.
 
-From there I'll be able to create a simple dorting function that filters out only IDs of launches that are contained within the selected timezone item in that newly created array.
+From there I'll be able to map through each item in the timezones array and display the appropriate launches by ID.
 
 ### How would you display an image for each rocket? A Wikipedia link?
 
