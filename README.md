@@ -17,7 +17,11 @@ In addition to the width of the items, I added a responsive utility modifier to 
 
 ### How would you go about grouping the rocket results by timezone?
 
-`//TODO`
+Since there is no timezone field on the launch item itself, I'll have to pull it from the launchpad item asssociated with the launch.
+
+So first I'll pull all the relevant launchpads associated with each upcoming launch, then create an array of timezones with their associated launch IDs.
+
+From there I'll be able to create a simple dorting function that filters out only IDs of launches that are contained within the selected timezone item in that newly created array.
 
 ### How would you display an image for each rocket? A Wikipedia link?
 
