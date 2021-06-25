@@ -17,11 +17,11 @@ In addition to the width of the items, I added a responsive utility modifier to 
 
 ### How would you go about grouping the rocket results by timezone?
 
-Since there is no timezone field on the launch item itself, I'll have to pull it from the launchpad item asssociated with the launch.
+This process ended up being simpler than I originally thought. The SpaceX API has the ability to pull in the full data of an associated record.
 
-So first I'll pull all the relevant launchpads associated with each upcoming launch, then create an array of timezones with their associated launch IDs.
+So I modified the call to get the launches and am now pulling in the full launchpad data, which includes the timezone.
 
-From there I'll be able to map through each item in the timezones array and display the appropriate launches by ID.
+From that I extracted all the different timezones in upcoming launches and mapped through them, displaying the relevant launches for each timezone.
 
 ### How would you display an image for each rocket? A Wikipedia link?
 

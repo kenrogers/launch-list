@@ -9,7 +9,6 @@ export default function RocketImage({ id }) {
       `https://api.spacexdata.com/v4/rockets/${id}`
     );
     setRocket(rocketData.data);
-    console.log(rocketData.data.flickr_images[0]);
   }, []);
 
   return rocket.flickr_images ? (
